@@ -1,0 +1,36 @@
+
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS videos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  filename TEXT NOT NULL,
+  filepath TEXT NOT NULL,
+  size INTEGER,
+  duration TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS destinations (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  rtmp_url TEXT NOT NULL,
+  is_active INTEGER DEFAULT 1
+);
+
+CREATE TABLE IF NOT EXISTS stream_config (
+  id INTEGER PRIMARY KEY DEFAULT 1,
+  current_video_id INTEGER,
+  loop_enabled INTEGER DEFAULT 1,
+  bitrate TEXT DEFAULT '2500k',
+  resolution TEXT DEFAULT '1920x1080',
+  fps INTEGER DEFAULT 30,
+  FOREIGN KEY(current_video_id) REFERENCES videos(id)
+);
+
+-- Default admin user (pass: admin123)
+INSERT OR IGNORE INTO users (username, password) VALUES ('admin', '$2a$10$Xm5.pYyH8jT/3BvO7L3Rye6W7yE5oE6k8rW2r6nE6pE6pE6pE6pE6');

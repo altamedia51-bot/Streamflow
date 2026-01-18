@@ -1,0 +1,5 @@
+{
+  "name": "Streamflow VPS Panel",
+  "description": "A high-performance, self-hosted live streaming panel built with React, Node.js, and FFmpeg for broadcasting video files to multiple RTMP destinations simultaneously with scheduling and looping support.",
+  "requestFramePermissions": []
+}

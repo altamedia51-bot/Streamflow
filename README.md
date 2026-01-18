@@ -1,11 +1,27 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# Streamflow VPS Panel
 
-  <h1>Built with AI Studio</h2>
+A professional self-hosted live streaming panel for Ubuntu VPS.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Features
+- **Live Broadcasting**: Stream MP4 files to multiple RTMP destinations (YouTube, Twitch, FB).
+- **High Performance**: Direct FFmpeg integration with multi-destination support.
+- **Persistent Storage**: Upload and manage video assets.
+- **Loop Support**: Continuous 24/7 broadcasting.
+- **Admin Panel**: Intuitive React-based dashboard.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Quick Start (Ubuntu VPS)
+1. Clone the repository.
+2. Run `chmod +x scripts/install.sh && ./scripts/install.sh`.
+3. Configure `.env` in the `server` directory.
+4. Start the backend: `cd server && npm start`.
+5. For the frontend, open `index.html` (in development) or serve the root directory.
 
-</div>
+## Default Credentials
+- **Username**: admin
+- **Password**: admin123 (Change this in the database/schema)
+
+## Tech Stack
+- **Frontend**: React 18, Tailwind CSS, TypeScript.
+- **Backend**: Node.js, Express.js, SQLite3.
+- **Media Engine**: FFmpeg.
